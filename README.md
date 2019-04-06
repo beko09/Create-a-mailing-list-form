@@ -83,6 +83,9 @@ in  tamplate add all template in the file tamplate in this repository
         newsletter.html
         newsletter_unsubscribe.html
         control_newsletter.html
+        
+#Note
+When you want to send new news to subscribers you have to go to the link page control_newsletter.html and then enter the title of the subject and write the message and just press the transmitter will be sent to all subscribers
     
     
 Enjoy
