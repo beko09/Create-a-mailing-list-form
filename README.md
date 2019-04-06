@@ -34,12 +34,51 @@ go to settings.py add INSTALLED_APPS app like her
 
         def __str__(set):
             return set.email
+            
+in admin Register your models here.
+
+    class NewsLetterAdmin(admin.ModelAdmin):
+        list_display = ['email', 'date_added']
+        search_fields = ['email']
+
+    admin.site.register(NewsLetterUser,NewsLetterAdmin)
+
+in form you nedd to creat some form
+
+    class NewsletterForm(forms.ModelForm):
+        email = forms.EmailField(required=True, label=' الايميل')
+        class Meta:
+            model = NewsLetterUser
+            fields = ['email']
+        def clean_email(self):
+            email = self.cleaned_data.get('email')
+            return email
+
+    class NewsCreationForm(forms.Form):
+        subject = forms.CharField(max_length=100)
+        message = forms.CharField(widget=forms.Textarea)
+        
+        
 in vewis.py Add the functions in the file veiws.py in this repository 
+        function newsletter_singup()
+        function newsletter_unsubscribe()
+        function control_newsletter()
+
 
 
 in post/urls.py  add urls function
+    
+    urlpatterns = [
+        path('newsletter_singup',newsletter_singup,name='newsletter_singup'),
+        path('newsletter_unsubscribe',newsletter_unsubscribe,name='newsletter_unsubscribe'),
+        path('control_newsletter',control_newsletter,name='control_newsletter'),
+
+    ]
 
 in  tamplate add all template in the file tamplate in this repository
- 
+        newsletter.html
+        newsletter_unsubscribe.html
+        control_newsletter.html
     
     
+Enjoy
