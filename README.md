@@ -60,6 +60,7 @@ in form you nedd to creat some form
         
         
 in vewis.py Add the functions in the file veiws.py in this repository 
+
         function newsletter_singup()
         function newsletter_unsubscribe()
         function control_newsletter()
@@ -76,6 +77,7 @@ in post/urls.py  add urls function
     ]
 
 in  tamplate add all template in the file tamplate in this repository
+
         newsletter.html
         newsletter_unsubscribe.html
         control_newsletter.html
