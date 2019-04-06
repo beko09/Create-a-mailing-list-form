@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{%block title%} send{% endblock%}
+
+{% block content%}
+<div class="container">
+        <div class="row">
+            <div class="cool">
+
+            <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}
+            </form>
+            </div>
+        </div>
+</div>
+ {% endblock%}  

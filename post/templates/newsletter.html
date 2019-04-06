@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %} 
+
+
+
+
+{% block content%} 
+<div class="container">
+    <div class="subs">  
+     
+        <div class="row">
+            <div class="col"> 
+            <h3 class="text-center">اشترك في  القائمة البريدية<h3>
+             {% if messages %}
+                                  {% for message in messages %}
+                                            
+                                      <div class="alert alert-{{message.tags}} alert-dismissible fade text-center show" role="alert">
+                                        {{message}} 
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                          <span aria-hidden="false">&times;</span>
+                                        </button>
+                                      </div>
+                                  {% endfor %}
+                         {% else %}
+
+            <form  method="POST" class="formsubs" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-group">
+                {{ form }}
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary editbtn" style="margin-top:0 !important;">اشتراك </button>
+               </span>
+               </div> 
+            </form> 
+              {% endif %} 
+         </div>
+        </div>
+    </div>
+</div>
+
+ {% endblock%} 
+
